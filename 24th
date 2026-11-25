@@ -1,0 +1,21 @@
+%{
+#include <stdio.h>
+int c=0;
+%}
+
+%x COMMENT
+
+%%
+"//".*       {c++;}
+"/*"         {c++; BEGIN(COMMENT);}
+<COMMENT>"*/" {BEGIN(INITIAL);}
+<COMMENT>\n  ;
+<COMMENT>.   ;
+.|\n         ECHO;
+%%
+
+int main() {
+    yylex();
+    printf("\nComments = %d",c);
+    return 0;
+}

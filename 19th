@@ -1,0 +1,17 @@
+%{
+#include <stdio.h>
+int ch=0,w=0,l=0;
+%}
+
+%%
+[ \t]+       {ch+=yyleng;}
+\n           {ch++;l++;}
+[a-zA-Z0-9]+ {ch+=yyleng;w++;}
+.            {ch++;}
+%%
+
+int main() {
+    yylex();
+    printf("Characters=%d\nWords=%d\nLines=%d",ch,w,l);
+    return 0;
+}

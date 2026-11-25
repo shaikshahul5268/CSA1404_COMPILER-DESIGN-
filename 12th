@@ -1,0 +1,46 @@
+#include <stdio.h>
+#include <string.h>
+
+char s[50];
+int i=0;
+
+void E();
+void T();
+void F();
+
+void E() {
+    T();
+    if(s[i]=='+') {
+        i++;
+        T();
+    }
+}
+
+void T() {
+    F();
+    if(s[i]=='*') {
+        i++;
+        F();
+    }
+}
+
+void F() {
+    if(s[i]=='i') i++;
+    else if(s[i]=='(') {
+        i++;
+        E();
+        if(s[i]==')') i++;
+    }
+}
+
+int main() {
+    scanf("%s",s);
+    E();
+
+    if(i==strlen(s))
+        printf("Accepted");
+    else
+        printf("Rejected");
+
+    return 0;
+}

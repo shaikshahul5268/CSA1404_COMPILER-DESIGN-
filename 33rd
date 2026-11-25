@@ -1,0 +1,15 @@
+%{
+#include <stdio.h>
+%}
+
+%%
+https?://[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}
+    printf("Valid URL");
+
+.+  printf("Invalid URL");
+%%
+
+int main() {
+    yylex();
+    return 0;
+}

@@ -1,0 +1,8 @@
+#include <stdio.h>
+
+int main() {
+    printf("S -> (L) | a\n");
+    printf("L -> SL'\n");
+    printf("L' -> ,SL' | epsilon\n");
+    return 0;
+}

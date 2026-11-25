@@ -1,0 +1,16 @@
+%{
+#include <stdio.h>
+int c=0;
+%}
+
+%%
+hello  c++;
+[a-zA-Z]+ ;
+.|\n   ;
+%%
+
+int main() {
+    yylex();
+    printf("Frequency = %d",c);
+    return 0;
+}

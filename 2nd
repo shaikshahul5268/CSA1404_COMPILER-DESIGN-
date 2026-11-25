@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char s[100];
+    fgets(s,100,stdin);
+
+    if(strncmp(s,"//",2)==0 ||
+       strncmp(s,"/*",2)==0)
+        printf("Comment");
+    else
+        printf("Not a comment");
+
+    return 0;
+}

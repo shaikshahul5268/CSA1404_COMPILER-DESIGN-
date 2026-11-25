@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <ctype.h>
+
+int main() {
+    FILE *f;
+    char c;
+    int ch=0,w=0,l=0,in=0;
+
+    f=fopen("input.txt","r");
+
+    if(f==NULL) return 0;
+
+    while((c=fgetc(f))!=EOF) {
+        ch++;
+        if(c=='\n') l++;
+
+        if(isspace(c)) in=0;
+        else if(!in) {
+            w++;
+            in=1;
+        }
+    }
+
+    printf("Characters=%d\nWords=%d\nLines=%d",ch,w,l);
+
+    fclose(f);
+    return 0;
+}

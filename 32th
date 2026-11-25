@@ -1,0 +1,16 @@
+%{
+#include <stdio.h>
+int p=0,n=0;
+%}
+
+%%
+-[0-9]+  {printf("Negative\n"); n++;}
+[0-9]+   {printf("Positive\n"); p++;}
+.|\n     ;
+%%
+
+int main() {
+    yylex();
+    printf("Positive=%d\nNegative=%d",p,n);
+    return 0;
+}

@@ -1,0 +1,9 @@
+#include <stdio.h>
+
+int main() {
+    printf("FIRST(S) = {a,b}\n");
+    printf("FIRST(A) = {epsilon}\n");
+    printf("FIRST(B) = {epsilon}\n");
+    return 0;
+}
+

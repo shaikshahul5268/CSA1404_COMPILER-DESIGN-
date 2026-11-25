@@ -1,0 +1,12 @@
+#include <stdio.h>
+
+int main() {
+    char a,b,c;
+    scanf("%c %c %c",&a,&b,&c);
+
+    printf("MOV R0,%c\n",a);
+    printf("ADD R0,%c\n",b);
+    printf("MOV %c,R0\n",c);
+
+    return 0;
+}

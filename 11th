@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char s[10][20], key[20];
+    int n,i;
+
+    printf("Enter number of symbols: ");
+    scanf("%d",&n);
+
+    for(i=0;i<n;i++)
+        scanf("%s",s[i]);
+
+    printf("Enter symbol to search: ");
+    scanf("%s",key);
+
+    for(i=0;i<n;i++) {
+        if(strcmp(s[i],key)==0) {
+            printf("Symbol Found");
+            return 0;
+        }
+    }
+    printf("Symbol Not Found");
+    return 0;
+}

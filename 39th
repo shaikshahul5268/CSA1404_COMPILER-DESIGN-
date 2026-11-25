@@ -1,0 +1,13 @@
+%{
+#include <stdio.h>
+%}
+
+%%
+hello  printf("welcome");
+.|\n   ECHO;
+%%
+
+int main() {
+    yylex();
+    return 0;
+}

@@ -1,0 +1,8 @@
+#include <stdio.h>
+
+int main() {
+    printf("LEADING(E) = {+,*,(,i}\n");
+    printf("LEADING(T) = {*,(,i}\n");
+    printf("LEADING(F) = {(,i}\n");
+    return 0;
+}

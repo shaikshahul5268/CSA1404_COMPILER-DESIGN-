@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <ctype.h>
+
+int main() {
+    char s[100];
+    int i;
+    scanf("%s", s);
+
+    for(i=0; s[i]; i++) {
+        if(isalpha(s[i]))
+            printf("%c - Identifier\n",s[i]);
+        else if(isdigit(s[i]))
+            printf("%c - Constant\n",s[i]);
+        else
+            printf("%c - Operator\n",s[i]);
+    }
+    return 0;
+}

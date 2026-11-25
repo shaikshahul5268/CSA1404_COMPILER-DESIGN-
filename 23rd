@@ -1,0 +1,14 @@
+%{
+#include <stdio.h>
+int n=1;
+%}
+
+%%
+^   {printf("%d ",n++);}
+.|\n ECHO;
+%%
+
+int main() {
+    yylex();
+    return 0;
+}

@@ -1,0 +1,14 @@
+%{
+#include <stdio.h>
+%}
+
+%%
+[a-zA-Z0-9._]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,} 
+    printf("Valid Email");
+.|\n  printf("Invalid Email");
+%%
+
+int main() {
+    yylex();
+    return 0;
+}

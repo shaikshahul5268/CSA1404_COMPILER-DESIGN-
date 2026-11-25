@@ -1,0 +1,13 @@
+#include <stdio.h>
+#include <ctype.h>
+
+int main() {
+    char s[100];
+    fgets(s,100,stdin);
+
+    for(int i=0;s[i];i++)
+        if(!isspace(s[i]))
+            printf("%c",s[i]);
+
+    return 0;
+}
